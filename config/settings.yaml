@@ -1,0 +1,60 @@
+---
+# 配置文件请严格遵循yaml语法格式，yaml学习地址 https://ansible-tran.readthedocs.io/en/latest/docs/YAMLSyntax.html
+#  主机配置
+host:
+  url: http://192.168.216.205/login
+  port: 8080
+
+#  邮箱配置
+email_conf:
+  username: zhx1990410@yeah.net
+  password: Cnmd101026
+  smtp_server: smtp.yeah.net
+  smtp_port: 25
+  from: zhx1990410@yeah.net
+  to:
+    - 799905520@qq.com
+    - 675204348@qq.com
+  body_type: plain
+  nick_name: subird
+
+#  测试用例配置
+suits:
+  - floder: 
+    - file_path: testcases.test_ui
+    - file: 
+      - file_name: test_demo
+      - runable: true
+      - class_name: TestDemo1
+      - cases: 
+        - test_case_name: test_001
+        - test_case_name: test_002
+    - file: 
+      - file_name: test_demo2
+      - runable: true
+      - class_name: TestDemo2
+      - cases: 
+        - test_case_name: test_003
+        - test_case_name: test_004
+  - floder: 
+    - file_path: testcases.test_ui2
+    - file: 
+      - file_name: test_demo3
+      - runable: true
+      - class_name: TestDemo3
+      - cases: 
+        - test_case_name: test_005
+        - test_case_name: test_006
+    - file: 
+      - file_name: test_demo4
+      - runable: true
+      - class_name: TestDemo4
+      - cases: 
+        - test_case_name: test_007
+        - test_case_name: test_008
+
+
+  
+
+
+
