@@ -15,7 +15,7 @@ class Email():
     邮件处理类
     '''
     def __init__(self):
-        self.email_conf = Config().email()
+        self.email_conf = Config().email
 
     def __init_msg(self, body, body_type, subject):
         msg = MIMEText(body, body_type, 'utf-8')

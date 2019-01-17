@@ -1,0 +1,90 @@
+{
+    "host":{
+        "url":"http://192.168.216.205/login",
+        "port": 8080
+    },
+
+    "constant":{
+        "LOGIN_STATUS_OK": "0",
+        "LOGIN_STATUS_FAIL": "1",
+
+        "TEST_STATUS_T": "1",
+        "TEST_STATUS_F":"0",
+
+        "RESULT_PATH_SCREENSHOTS": "result/screenshot",
+        "RESULT_PATH_XML": "result/xml",
+        "RESULT_PATH_HTML": "result/html",
+        
+        "RANDOM_PARAM": "randomNum",
+        "GENERATE_XML": "1",
+        "GENERATE_HTML": "2"
+    },
+
+    "email":{
+        "username": "zhx1990410@yeah.net",
+        "password": "Cnmd101026",
+        "smtp_server": "smtp.yeah.net",
+        "smtp_port": 25,
+        "from": "zhx1990410@yeah.net",
+        "to":[
+            "799905520@qq.com",
+            "675204348@qq.com"
+        ],
+        "body_type": "plain",
+        "nick_name": "subird"
+    },
+
+    "suits":[
+        {
+            "file_path": "cases/ui/",
+            "file":[
+                {
+                    "name":"test_demo",
+                    "runable": true,
+                    "class":"TestDemo1",
+                    "desc":"用于测试",
+                    "cases":[
+                        "test_001",
+                        "test_002"
+                    ]
+                },
+                {
+                    "name":"test_demo2",
+                    "runable": false,
+                    "class":"TestDemo1",
+                    "desc":"用于测试",
+                    "cases":[
+                        "test_001",
+                        "test_002"
+                    ]
+                }
+            ]
+        },
+        {
+            "file_path": "cases/test_api/",
+            "file":[
+                {
+                    "name":"test_demo",
+                    "runable": false,
+                    "class":"TestDemo1",
+                    "desc":"用于测试",
+                    "cases":[
+                        "test_001",
+                        "test_002"
+                    ]
+                },
+                {
+                    "name":"test_demo2",
+                    "runable": false,
+                    "class":"TestDemo1",
+                    "desc":"用于测试",
+                    "cases":[
+                        "test_001",
+                        "test_002"
+                    ]
+                }
+            ]
+        }
+    ]
+ 
+}

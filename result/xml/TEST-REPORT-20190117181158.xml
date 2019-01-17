@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<testsuite errors="1" failures="0" name="test_demo.TestDemo1-20190117181158" tests="2" time="10.007">
+	<testcase classname="test_demo.TestDemo1" name="test_002" time="5.002"/>
+	<testcase classname="test_demo.TestDemo1" name="test_001" time="5.005">
+		<error message="1 != 2 : error" type="AssertionError">
+<![CDATA[Traceback (most recent call last):
+  File "cases/ui\test_demo.py", line 12, in test_001
+    self.assertEqual(1, 2, "error")
+AssertionError: 1 != 2 : error
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>
