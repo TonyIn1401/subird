@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<testsuite errors="1" failures="0" name="test_demo.TestDemo1-20190118145532" tests="2" time="0.002">
+	<testcase classname="test_demo.TestDemo1" name="test_002" time="0.001"/>
+	<testcase classname="test_demo.TestDemo1" name="test_001" time="0.001">
+		<error message="'TestDemo1' object has no attribute 'driver'" type="AttributeError">
+<![CDATA[Traceback (most recent call last):
+  File "cases/ui\test_demo.py", line 14, in test_001
+    driver = self.driver
+AttributeError: 'TestDemo1' object has no attribute 'driver'
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

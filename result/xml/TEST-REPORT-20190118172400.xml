@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<testsuite errors="1" failures="0" name="test_demo.TestDemo1-20190118172401" tests="2" time="2.544">
+	<testcase classname="test_demo.TestDemo1" name="test_001" time="2.498"/>
+	<testcase classname="test_demo.TestDemo1" name="test_002" time="0.045">
+		<error message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;div[@id='1']/h3/a&quot;}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.7 (efcef9a3ecda02b2132af215116a03852d08b9cb),platform=Windows NT 10.0.16299 x86_64)
+" type="NoSuchElementException">
+<![CDATA[Traceback (most recent call last):
+  File "cases/ui\test_demo.py", line 24, in test_002
+    a = self.driver.find_element_by_xpath("div[@id='1']/h3/a")
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"div[@id='1']/h3/a"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.7 (efcef9a3ecda02b2132af215116a03852d08b9cb),platform=Windows NT 10.0.16299 x86_64)
+
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

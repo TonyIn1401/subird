@@ -1,6 +1,6 @@
 {
     "host":{
-        "url":"http://192.168.216.205/login",
+        "url":"https:baidu.com",
         "port": 8080
     },
 
@@ -16,8 +16,7 @@
         "RESULT_PATH_HTML": "result/html",
         
         "RANDOM_PARAM": "randomNum",
-        "GENERATE_XML": "1",
-        "GENERATE_HTML": "2"
+        "GENERATE_TYPE": "html"
     },
 
     "email":{

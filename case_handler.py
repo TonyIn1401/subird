@@ -9,6 +9,10 @@ import os, sys, time
 import unittest
 import xmlrunner
 from config.config import Config
+from common.constant import GenerateType
+from common.HTMLTestRunnerCn import HTMLTestRunner
+from common.result import Result
+import logging
 
 class Cases():
     def __init__(self):
@@ -43,15 +47,40 @@ class Cases():
         return suites_all
 
     def run(self, runner_type):
-        file_name = 'TEST-REPORT-{0}.{1}'.format(time.strftime("%Y%m%d%H%M%S"), runner_type)
-        suites = self.load()
-        self.run_xml(suites, file_name)
+        result = Result()
+        try:
+            file_name = 'TEST-REPORT-{0}.{1}'.format(time.strftime("%Y%m%d%H%M%S"), runner_type)
+            suites = self.load()
+            if runner_type == GenerateType().XML:
+                result.msg = self.__run_xml(suites, file_name)
+            else:
+                result.msg = self.__run_html(suites, file_name)
+            result.ok = True
+        except Exception as e:
+            result.ok = False
+            result.msg = "error durring run suits {}".format(e)
+        finally:
+            return result
+        
 
-    def run_xml(self, suites, file_name):
+    def __run_xml(self, suites, file_name):
         report_path = os.path.join(self.conf["RESULT_PATH_XML"], file_name)
-        report_io = open(report_path, 'w', encoding='UTF-8')
-        xml_runner = xmlrunner.XMLTestRunner(output=report_io)
-        xml_runner.run(suites)
+        with open(report_path, 'w', encoding='UTF-8') as fp:
+            xml_runner = xmlrunner.XMLTestRunner(output=fp)
+            xml_runner.run(suites)
+        return report_path
+
+    def __run_html(self, suites, file_name):
+        report_path = os.path.join(self.conf["RESULT_PATH_HTML"], file_name)
+        with open(report_path, 'wb') as fp:
+            runner = HTMLTestRunner(
+                stream=fp,
+                title='自动化测试报告',
+                tester='Zhaoxiang'
+                )
+            runner.run(suites)
+        return report_path
 
 if __name__ == "__main__":
-    Cases().run("xml")
+    cons = Config().constant
+    Cases().run(cons["GENERATE_TYPE"])

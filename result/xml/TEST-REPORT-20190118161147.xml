@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<testsuite errors="1" failures="0" name="unittest.suite._ErrorHolder-20190118161152" tests="1" time="0.000">
+	<testcase classname="unittest.suite._ErrorHolder" name="TestDemo1)" time="0.000">
+		<error message="('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))" type="ProtocolError">
+<![CDATA[Traceback (most recent call last):
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1321, in getresponse
+    response.begin()
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 296, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "cases/ui\templates\template_baidu.py", line 42, in setUpClass
+    cls.__lgoin()
+  File "cases/ui\templates\template_baidu.py", line 49, in __lgoin
+    driver = webdriver.Ie()
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\ie\webdriver.py", line 97, in __init__
+    keep_alive=keep_alive)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 319, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 374, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 402, in _request
+    resp = http.request(method, url, body=body, headers=headers)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\request.py", line 72, in request
+    **urlopen_kw)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\request.py", line 150, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\poolmanager.py", line 322, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1321, in getresponse
+    response.begin()
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 296, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\qxv0514\AppData\Local\Programs\Python\Python37\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>
