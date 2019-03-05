@@ -11,7 +11,7 @@ import json
 
 class Config():
     """
-    解析yaml，获取相应配置信息
+    return the config info    
     """
     def __init__(self):
         settings = self._get_config()
@@ -22,7 +22,10 @@ class Config():
 
     def _get_config(self):
         """
-        解析json配置
+        get the config info from json file
+        
+        Returns:
+            str -- config info
         """
         path = os.path.join(os.path.dirname(os.path.abspath(__file__)) + '/settings.json')
         with open(path, 'r', encoding='UTF-8') as f:
@@ -30,6 +33,9 @@ class Config():
         return conf_str.decode() if isinstance(conf_str, bytes) else conf_str
 
 if __name__ == '__main__':
+    """
+    for test
+    """
     suits = Config().suits
     for case in suits:
         print(case[0][1])

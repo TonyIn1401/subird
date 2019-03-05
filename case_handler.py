@@ -15,15 +15,21 @@ from common.result import Result
 import logging
 
 class Cases():
+    """
+    the class for cases, you can load and run
+    """
     def __init__(self):
         conf = Config()
         self.suites_conf = conf.suits
         self.conf = conf.constant
 
     def load(self):
-        '''
-        加载配置中的所有测试用例
-        '''
+        """
+        load all the suites and cases in the config file
+        
+        Returns:
+            [TestSuites] -- return all the test suites
+        """
         suites_all = unittest.TestSuite()
         for folder in self.suites_conf:
             file_path = folder["file_path"]
@@ -47,6 +53,12 @@ class Cases():
         return suites_all
 
     def run(self, runner_type):
+        """
+        run all test suits which in the config file
+        
+        Arguments:
+            runner_type {GenerateType} -- generate type, which type you want to generate, current it supports Html and xml
+        """
         result = Result()
         try:
             file_name = 'TEST-REPORT-{0}.{1}'.format(time.strftime("%Y%m%d%H%M%S"), runner_type)
@@ -64,6 +76,13 @@ class Cases():
         
 
     def __run_xml(self, suites, file_name):
+        """
+        run the suites and generate the xml result which named the file_name
+        
+        Arguments:
+            suites {TestSuites} -- the test suites which need to be tested
+            file_name {str} -- the file name which will be generated
+        """
         report_path = os.path.join(self.conf["RESULT_PATH_XML"], file_name)
         with open(report_path, 'w', encoding='UTF-8') as fp:
             xml_runner = xmlrunner.XMLTestRunner(output=fp)
@@ -82,5 +101,8 @@ class Cases():
         return report_path
 
 if __name__ == "__main__":
+    """
+    test for this class
+    """
     cons = Config().constant
     Cases().run(cons["GENERATE_TYPE"])

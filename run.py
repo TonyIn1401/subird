@@ -11,6 +11,9 @@ from email_handler import Email
 from config.config import Config
 
 def run():
+    """
+    begin to run the test
+    """
     cons = Config().constant
     cases = Cases()
     result = Cases().run(cons["GENERATE_TYPE"])
@@ -28,4 +31,7 @@ def run():
     email.send(email_body, email_body_type, email_subject)
 
 if __name__ == '__main__':
+    """
+    main method
+    """
     run()
